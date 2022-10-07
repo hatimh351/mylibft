@@ -6,9 +6,10 @@
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 20:25:09 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/06 21:58:40 by hlahwaou         ###   ########.fr       */
+/*   Updated: 2022/10/07 13:25:32 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
+#include <stdlib.h>
