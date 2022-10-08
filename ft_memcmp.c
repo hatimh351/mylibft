@@ -6,7 +6,7 @@
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 23:52:20 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/06 23:53:28 by hlahwaou         ###   ########.fr       */
+/*   Updated: 2022/10/08 05:42:41 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,9 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		if (s1_[i] == '\0' && s2_[i] == '\0')
-			return (0);
 		if (s1_[i] != s2_[i])
 			return (s1_[i] - s2_[i]);
 		i++;
 	}
-	return (s1_[i - 1] - s2_[i - 1]);
+	return (0);
 }

@@ -62,6 +62,7 @@ void	final_r(char *p, char *str, char *trim)
 			p[k++] = str[i];
 		i++;
 	}
+	p[k] = '\0';
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
