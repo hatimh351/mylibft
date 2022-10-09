@@ -6,36 +6,21 @@
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 14:30:12 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/07 14:55:39 by hlahwaou         ###   ########.fr       */
+/*   Updated: 2022/10/09 17:54:32 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
-
-void	*ft_calloc(size_t count, size_t size)
+void	*ft_alloc(size_t size)
 {
 	void	*p;
 	size_t	i;
 
 	i = 0;
-	p = malloc(count * size);
+	p = malloc(size);
 	if (!p)
 		return (0);
-	while (i < count * size)
-	{
-		*(char *)(p + i) = 0;
-		i++;
-	}
 	return (p);
 }
 
@@ -47,11 +32,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*s2_;
 	int		j;
 
-	s1_ = s1;
-	s2_ = s2;
+	s1_ = (char *)s1;
+	s2_ = (char *)s2;
 	j = ft_strlen(s1_);
 	j += ft_strlen(s2_);
-	p = ft_calloc(2, j);
+	p = (char *)ft_alloc(j + 1);
+	if (!p)
+		return (0);
 	j = 0;
 	i = 0;
 	while (s1_[i])
