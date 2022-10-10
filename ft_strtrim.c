@@ -12,75 +12,102 @@
 
 #include "libft.h"
 
-size_t	ft_strlen(char *str)
-{
-	size_t	i;
-
-	i = 0;
-	if (str == 0)
-		return (0);
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
-
-
-void	check_2(char *str, char *set,size_t len_str, size_t len_set)
+void	check1(char *str, char *set)
 {
 	size_t	i;
 	size_t	j;
+	size_t	condition;
 
 	i = ft_strlen(str) - 1;
-	while(i >0)
+	while (i > 0)
 	{
-		
-		j = ft_strlen(set) - 1;
-		while (j >0)
+		j = 0;
+		condition = 0;
+		while (set[j])
 		{
-			if (set[j] == str[i])
+			if (str[i] == set[j])
 			{
+				condition = 1;
 				str[i] = 1;
-				set[j] = 1;
 			}
-			j--;
+			j++;
 		}
+		if (condition == 0)
+			break ;
 		i--;
 	}
 }
 
-void	check_1(char *str, char *set)
+void	check(char *str, char *set)
 {
 	size_t	i;
 	size_t	j;
-	size_t	len_str;
-	size_t	len_set;
+	size_t	condition;
 
-	len_str = ft_strlen(str);
-	len_set = ft_strlen(set);
 	i = 0;
 	while (str[i])
 	{
 		j = 0;
+		condition = 0;
 		while (set[j])
 		{
-			if (set[j] == str[i])
+			if (str[i] == set[j])
 			{
+				condition = 1;
 				str[i] = 1;
-				check_2(str, set,len_str,len_set);
 			}
 			j++;
 		}
+		if (condition == 0)
+			break ;
 		i++;
 	}
+	check1(str, set);
 }
 
-
-int main()
+char	*ft__alloc(char *str, size_t i)
 {
-  char h[]= "hatimm ilyassa";
-  char set[]= "ha";
-  check_1(h,set);
-	printf("%s",h);
+	char	*p;
+	size_t	n;
+	size_t	l;
+
+	l = 0;
+	p = malloc(i * sizeof(char) + 1);
+	if (!p)
+	{
+		free(p);
+		return (0);
+	}
+	n = 0;
+	while (str[l])
+	{
+		if (str[l] != 1)
+			p[n++] = str[l];
+		l++;
+	}
+	p[n] = '\0';
+	return (p);
 }
 
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	size_t	i;
+	size_t	j;
+	char	*p;
 
+	j = 0;
+	if (!s1 && !set)
+		return (0);
+	check((char *)s1, (char *)set);
+	i = 0;
+	while (*(char *)(s1 + i) != '\0')
+	{
+		if (*(char *)(s1 + i) != 1)
+			j++;
+		i++;
+	}
+	p = ft__alloc((char *)s1, j);
+	if (!p)
+		return (0);
+	return (p);
+}
