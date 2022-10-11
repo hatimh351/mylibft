@@ -6,7 +6,7 @@
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 01:00:40 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/11 05:13:39 by hlahwaou         ###   ########.fr       */
+/*   Updated: 2022/10/11 05:18:08 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,4 @@ char	*ft_itoa(int n)
 		i--;
 	}
 	return (p);
-}
-
-int main()
-{
-	char *p = ft_itoa(31331113);
-	printf("%s",p);
 }
