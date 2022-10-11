@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 21:25:35 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/11 20:10:22 by hlahwaou         ###   ########.fr       */
+/*   Created: 2022/10/11 19:10:25 by hlahwaou          #+#    #+#             */
+/*   Updated: 2022/10/11 21:01:41 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t	ft_strlcpy(char dst, const char src, size_t dstsize)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	i;
+	char	*str;
+	int		i;
+	char	p;
+	size_t	j;
 
-	i = 0;
-	while (i < dstsize - 1 && src[i])
+	str = (char *)s;
+	i = (int)ft_strlen(str);
+	p = malloc(i * sizeof(char) + 1);
+	p[i] = '\0';
+	if (!p || !s)
+		return (0);
+	j = 0;
+	while (p[j])
 	{
-		dst[i] = src[i];
-		i++;
+		p[j] = (*f)(i, str[i]);
+		j++;
 	}
-	dst[i] = '\0';
-	i = 0;
-	while (src[i])
-		i++;
-	return (i);
+	return (p);
 }

@@ -6,13 +6,13 @@
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 16:43:31 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/10 23:06:17 by hlahwaou         ###   ########.fr       */
+/*   Updated: 2022/10/11 21:36:39 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	word_count(char *str, char c)
+static size_t	word_count(char *str, char c)
 {
 	size_t	j;
 	size_t	i;
@@ -23,7 +23,7 @@ size_t	word_count(char *str, char c)
 	while (str[i])
 	{
 		j = 1;
-		while (str[i] == c)
+		while (str[i] == c && str[i] != '\0')
 			i++;
 		while (str[i] != c && str[i])
 		{
@@ -38,7 +38,7 @@ size_t	word_count(char *str, char c)
 	return (n);
 }
 
-void	free_p(char **p)
+static void	free_p(char **p)
 {
 	size_t	i;
 
@@ -48,7 +48,7 @@ void	free_p(char **p)
 	p = 0;
 }
 
-void	ft_alloc_string(char **p, char *str, char c)
+static void	ft_alloc_string(char **p, char *str, char c)
 {
 	size_t	start;
 	size_t	i;
@@ -65,10 +65,11 @@ void	ft_alloc_string(char **p, char *str, char c)
 			j = 0;
 			while (str[i + j] != c && str[i + j])
 				j++;
-			p[k++] = ft_substr(str, start, j);
+			p[k] = ft_substr(str, start, j);
 			i += j;
-			if (!p)
+			if (!p[k])
 				free_p(p);
+			k++;
 		}
 		if (str[i] == '\0')
 			break ;

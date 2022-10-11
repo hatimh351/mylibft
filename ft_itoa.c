@@ -6,13 +6,13 @@
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 01:00:40 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/11 05:18:08 by hlahwaou         ###   ########.fr       */
+/*   Updated: 2022/10/11 21:16:58 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long	how_many_number(long n)
+static long	how_many_number(long n)
 {
 	long	i;
 
