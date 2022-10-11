@@ -6,88 +6,59 @@
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 01:00:40 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/11 02:46:39 by hlahwaou         ###   ########.fr       */
+/*   Updated: 2022/10/11 05:13:39 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	how_many_int(int n, char *p)
+long	how_many_number(long n)
 {
-	int	i;
-	int	f_10;
-	int	j;
+	long	i;
 
-	j = 1;
-	if (n == 0)
-	{
-		p[0] = 0 + 48;
-		return (0);
-	}
-	if (n < 0)
-		n *= -1;
 	i = 0;
-	f_10 = 1;
-	while (i < 10)
-	{
-		if (f_10 <= n && n < f_10 * 10)
-			break ;
-		j++;
-		i++;
-		f_10 *= 10;
-	}
-	return (j);
-}
-
-void	final_resl(char *p, int n, int j)
-{
-	int		i;
-	char	c;
-
 	if (n < 0)
 	{
-		p[0] = '-';
 		n *= -1;
-		while (j > 0)
-		{
-			c = n % 10 + 48;
-			p[j] = c;
-			n = n / 10;
-			j--;
-		}
+		i++;
 	}
-	else
-	{	
-		while (j > -1)
-		{
-			c = n % 10 + 48;
-			p[j] = c;
-			n = n / 10;
-			j--;
-		}
+	while (n > 0)
+	{
+		n = n / 10;
+		i++;
 	}
+	return (i);
 }
 
 char	*ft_itoa(int n)
 {
+	long	nbr;
 	char	*p;
-	int		i;
-	int		l;
+	long	i;
 
-	l = how_many_int(n, p);
-	p = (char *)ft_calloc(1, 12);
+	nbr = (long)n;
+	i = how_many_number(nbr);
+	if (nbr == 0)
+		return (ft_strdup("0"));
+	p = ft_calloc(i, 1);
 	if (!p)
 		return (0);
-	if (l == 0)
-		return (p);
-	if (n < 0)
-		l++;
-	final_resl(p, n, l - 1);
+	if (nbr < 0)
+	{
+		p[0] = '-';
+		nbr *= -1;
+	}
+	while (nbr > 0)
+	{
+		p[i - 1] = (nbr % 10) + 48;
+		nbr /= 10;
+		i--;
+	}
 	return (p);
 }
 
 int main()
 {
-	char *p = ft_itoa(+13312);
+	char *p = ft_itoa(31331113);
 	printf("%s",p);
 }

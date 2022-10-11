@@ -6,7 +6,7 @@
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 14:30:12 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/09 17:54:32 by hlahwaou         ###   ########.fr       */
+/*   Updated: 2022/10/11 04:41:25 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*s2_;
 	int		j;
 
+	if (s1 = 0 || s2 == 0)
+		return (0);
 	s1_ = (char *)s1;
 	s2_ = (char *)s2;
 	j = ft_strlen(s1_);
