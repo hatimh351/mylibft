@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 16:43:31 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/10 19:29:08 by marvin           ###   ########.fr       */
+/*   Updated: 2022/10/10 23:06:17 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,27 +36,6 @@ size_t	word_count(char *str, char c)
 		}
 	}
 	return (n);
-}
-
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	unsigned int	i;
-	char			*p;
-	char			*str;
-
-	str = (char *)s;
-	i = 0;
-	p = (char *)malloc((len * sizeof(char)) + 1);
-	if (!p)
-		return (0);
-	i = 0;
-	while (i < len)
-	{
-		p[i] = str[i + start];
-		i++;
-	}
-	p[i] = '\0';
-	return (p);
 }
 
 void	free_p(char **p)

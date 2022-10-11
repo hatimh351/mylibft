@@ -6,7 +6,7 @@
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 13:26:03 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/10 03:54:13 by hlahwaou         ###   ########.fr       */
+/*   Updated: 2022/10/11 01:54:18 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,7 @@ void	*ft_calloc(size_t count, size_t size)
 	i = 0;
 	p = malloc(count * size);
 	if (!p)
-	{
-		free(p);
 		return (0);
-	}
 	while (i < count * size)
 	{
 		*(char *)(p + i) = 0;

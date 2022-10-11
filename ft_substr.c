@@ -6,7 +6,7 @@
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 14:16:22 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/10 03:03:25 by hlahwaou         ###   ########.fr       */
+/*   Updated: 2022/10/10 23:04:35 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char			*p;
 	char			*str;
 
-	if (start == 0)
-		return (s);
+	str = (char *)s;
 	if (!s || len == 0)
 		return (0);
-	str = (char *)s;
 	i = 0;
 	p = (char *)malloc((len * sizeof(char)) + 1);
 	if (!p)

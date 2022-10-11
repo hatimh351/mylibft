@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 23:54:50 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/10 17:52:35 by marvin           ###   ########.fr       */
+/*   Updated: 2022/10/10 21:31:09 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,4 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	return (nbr);
-}
-
-int main()
-{
-	printf("%d\n",ft_atoi("-2147483649"));
-	printf("%d",atoi("-2147483649"));
-
 }
