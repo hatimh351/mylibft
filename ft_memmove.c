@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 08:20:34 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/10 18:11:34 by marvin           ###   ########.fr       */
+/*   Updated: 2022/10/12 03:14:51 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,26 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char	*dst_;
-	unsigned char	*src_;
 	size_t			i;
-	unsigned char	c;
-	unsigned char	l;
 
+	if (!dst || !src)
+		return (0);
+	if (dst == src)
+		return (dst);
 	i = 0;
-	dst_ = (unsigned char *)dst;
-	src_ = (unsigned char *)src;
-	c = src_[0];
-	while (i < len)
+	if (dst > src)
 	{
-		l = src_[i + 1];
-		dst_[i] = c;
-		c = l;
-		i++;
+		while (i < len)
+		{
+			((char *)dst)[len - i - 1] = ((char *)src)[len - i - 1];
+			i++;
+		}	
+	}
+	else
+	{
+		while (i < len)
+			((char *)dst)[i] = ((char *)src)[i];
+			i++;
 	}
 	return (dst);
 }

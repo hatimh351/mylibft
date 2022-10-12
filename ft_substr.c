@@ -6,7 +6,7 @@
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 14:16:22 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/10 23:04:35 by hlahwaou         ###   ########.fr       */
+/*   Updated: 2022/10/11 22:12:49 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	while (i < len)
 	{
-		p[i] = str[i + start];
+		p[i] = str[i + start - 1];
 		i++;
 	}
 	p[i] = '\0';
