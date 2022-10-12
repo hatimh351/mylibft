@@ -6,7 +6,7 @@
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:45:33 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/09 18:37:27 by hlahwaou         ###   ########.fr       */
+/*   Updated: 2022/10/12 05:00:24 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ size_t	ft_strlen(char *str)
 	size_t	i;
 
 	i = 0;
-	if (str == 0)
-		return (0);
 	while (str[i] != '\0')
 		i++;
 	return (i);

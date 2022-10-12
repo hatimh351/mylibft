@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 19:10:25 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/11 21:01:41 by hlahwaou         ###   ########.fr       */
+/*   Created: 2022/10/12 03:27:28 by hlahwaou          #+#    #+#             */
+/*   Updated: 2022/10/12 03:29:27 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
-{
-	char	*str;
-	int		i;
-	char	p;
-	size_t	j;
+#include "libft.h"
 
-	str = (char *)s;
-	i = (int)ft_strlen(str);
-	p = malloc(i * sizeof(char) + 1);
-	p[i] = '\0';
-	if (!p || !s)
-		return (0);
-	j = 0;
-	while (p[j])
-	{
-		p[j] = (*f)(i, str[i]);
-		j++;
-	}
-	return (p);
+int	ft_isascii(int c)
+{
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
 }
