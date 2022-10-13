@@ -6,7 +6,7 @@
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 16:43:31 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/11 21:43:00 by hlahwaou         ###   ########.fr       */
+/*   Updated: 2022/10/12 19:21:51 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,16 +86,10 @@ char	**ft_split(char const *s, char c)
 	i = word_count((char *)s, c);
 	p = malloc(sizeof(char *) * i + sizeof(char *));
 	if (!p)
-	{
-		free(p);
 		return (0);
-	}
 	p[i] = 0;
 	ft_alloc_string(p, (char *)s, c);
-	if (p == 0)
-	{
-		free(p);
+	if (!p)
 		return (0);
-	}
 	return (p);
 }
