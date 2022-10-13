@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/13 03:01:46 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/13 04:09:53 by hlahwaou         ###   ########.fr       */
+/*   Created: 2022/10/13 03:08:54 by hlahwaou          #+#    #+#             */
+/*   Updated: 2022/10/13 22:11:18 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
+	long	nbr;
 
-	i = 0;
-	while (s[i])
+	if (n < 0)
 	{
-		write(fd, &s[i], 1);
-		i++;
+		ft_putchar_fd('-', fd);
+		n *= -11;
+		nbr = n;
 	}
-	write(fd, "\n", 1);
+	else
+		nbr = n;
+	if (n <= 9 && n >= 0)
+	{
+		ft_putchar_fd(n + 48, fd);
+	}
+	else if (nbr > 9)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd((n % 10) + 48, fd);
+	}
 }
