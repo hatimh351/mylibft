@@ -6,7 +6,7 @@
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:08:54 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/13 22:11:18 by hlahwaou         ###   ########.fr       */
+/*   Updated: 2022/10/13 22:30:14 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,19 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	long	nbr;
 
-	if (n < 0)
+	nbr = n;
+	if (nbr < 0)
 	{
 		ft_putchar_fd('-', fd);
-		n *= -11;
-		nbr = n;
+		nbr *= -1;
+	}
+	if (nbr <= 9 && 0 <= nbr)
+	{
+		ft_putchar_fd(nbr + 48, fd);
 	}
 	else
-		nbr = n;
-	if (n <= 9 && n >= 0)
 	{
-		ft_putchar_fd(n + 48, fd);
-	}
-	else if (nbr > 9)
-	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd((n % 10) + 48, fd);
+		ft_putnbr_fd((int)(nbr / 10), fd);
+		ft_putnbr_fd((int)(nbr % 10), fd);
 	}
 }
