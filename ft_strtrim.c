@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	check1(char *str, char *set)
+static void	check1(char *str, char *set)
 {
 	size_t	i;
 	size_t	j;
@@ -38,7 +38,7 @@ void	check1(char *str, char *set)
 	}
 }
 
-void	check(char *str, char *set)
+static void	check(char *str, char *set)
 {
 	size_t	i;
 	size_t	j;
@@ -65,7 +65,7 @@ void	check(char *str, char *set)
 	check1(str, set);
 }
 
-char	*ft__alloc(char *str, size_t i)
+static char	*ft__alloc(char *str, size_t i)
 {
 	char	*p;
 	size_t	n;
@@ -74,10 +74,7 @@ char	*ft__alloc(char *str, size_t i)
 	l = 0;
 	p = malloc(i * sizeof(char) + 1);
 	if (!p)
-	{
-		free(p);
 		return (0);
-	}
 	n = 0;
 	while (str[l])
 	{
@@ -96,7 +93,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*p;
 
 	j = 0;
-	if (!s1 && !set)
+	if (!s1 || !set)
 		return (0);
 	check((char *)s1, (char *)set);
 	i = 0;
