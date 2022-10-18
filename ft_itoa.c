@@ -6,7 +6,7 @@
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 01:00:40 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/11 21:16:58 by hlahwaou         ###   ########.fr       */
+/*   Updated: 2022/10/18 05:17:54 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ char	*ft_itoa(int n)
 	long	i;
 
 	nbr = (long)n;
-	i = how_many_number(nbr);
 	if (nbr == 0)
 		return (ft_strdup("0"));
-	p = ft_calloc(i, 1);
+	i = how_many_number(nbr);
+	p = ft_calloc(i + 1, 1);
 	if (!p)
 		return (0);
 	if (nbr < 0)

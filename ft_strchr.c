@@ -6,7 +6,7 @@
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:14:02 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/06 23:18:50 by hlahwaou         ###   ########.fr       */
+/*   Updated: 2022/10/17 23:36:31 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ char	*ft_strchr(const char *s, int c)
 	while (s_[i])
 	{
 		if (c == s_[i])
-		{
 			return (s_ + i);
-		}
 		i++;
 	}
 	if (c == '\0' && s_[i] == '\0')

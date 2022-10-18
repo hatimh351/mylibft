@@ -6,7 +6,7 @@
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 14:03:44 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/13 00:20:02 by hlahwaou         ###   ########.fr       */
+/*   Updated: 2022/10/17 23:36:45 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strdup(const char *s1)
 	i = 0;
 	while (s1[i])
 		i++;
-	p = malloc(i * sizeof(char) + sizeof(char));
+	p = malloc(i * sizeof(char) + 1);
 	if (!p)
 		return (0);
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 23:54:50 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/15 22:17:48 by hlahwaou         ###   ########.fr       */
+/*   Updated: 2022/10/17 21:12:26 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int	ft_atoi(const char *str)
 {
 	char	*str_;
 	int		i;
-	int		signe;
-	int		nbr;
+	long	signe;
+	long	nbr;
 
 	i = 0;
 	nbr = 0;

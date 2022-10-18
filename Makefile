@@ -15,13 +15,17 @@ ft_lstadd_back.c \
 CC = cc -Wall -Wextra -Werror
 OBJS = ${SRCS:%.c=%.o}
 O_BONUS = ${BONUS:%.c=%.o}
-all	:$(NAME)
-$(NAME) : $(OBJS) $(O_BONUS)
-	ar rcs $(NAME) $^
+all : $(NAME)
+
+$(NAME) : bonus $(OBJS)
+	ar rc $(NAME) $(O_BONUS) $(OBJS)
+
 %.o : %.c
-	$(CC) -c $< -o $@
+	$(CC) -c $^
+bonus : $(BONUS)
+	$(CC) -c $^
 clean :
 	rm -rf $(OBJS) $(O_BONUS)
-fclean: clean
+fclean : clean
 	rm -rf $(NAME)
-re : fclean all
+re : fclean $(NAME)

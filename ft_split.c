@@ -6,7 +6,7 @@
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 16:43:31 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/13 21:00:02 by hlahwaou         ###   ########.fr       */
+/*   Updated: 2022/10/17 23:33:51 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ char	**ft_split(char const *s, char c)
 	size_t	i;
 	char	**p;
 
+	if (!c || !s)
+		return (0);
 	i = word_count((char *)s, c);
 	p = malloc(sizeof(char *) * i + sizeof(char *));
 	if (!p)
