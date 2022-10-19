@@ -6,7 +6,7 @@
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 23:02:50 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/12 06:35:27 by hlahwaou         ###   ########.fr       */
+/*   Updated: 2022/10/18 22:18:34 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char	c_;
 	unsigned char	*s_;
 
-	if (!s || !n)
-		return (0);
 	s_ = (unsigned char *)s;
 	i = 0;
 	c_ = (unsigned char)c;

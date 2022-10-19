@@ -6,7 +6,7 @@
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:45:07 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/12 04:34:23 by hlahwaou         ###   ########.fr       */
+/*   Updated: 2022/10/18 21:58:44 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	while (i < n)
 	{
 		if (s1_[i] != s2_[i])
+			return (s1_[i] - s2_[i]);
+		if (s1_[i] == '\0' || s2[i] == '\0')
 			return (s1_[i] - s2_[i]);
 		i++;
 	}

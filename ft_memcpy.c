@@ -6,7 +6,7 @@
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 20:55:50 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/12 19:08:51 by hlahwaou         ###   ########.fr       */
+/*   Updated: 2022/10/18 22:27:52 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dst, void const *src, size_t	n)
 	char		*dest_;
 	char		*src_;
 
-	if (!dst)
+	if (!dst && !src)
 		return (0);
 	if (n == 0)
 		return (dst);

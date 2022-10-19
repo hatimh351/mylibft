@@ -28,7 +28,7 @@ static void	check1(char *str, char *set)
 			if (str[i] == set[j])
 			{
 				condition = 1;
-				str[i] = 1;
+				str[i] = 'x';
 			}
 			j++;
 		}
@@ -54,7 +54,7 @@ static void	check(char *str, char *set)
 			if (str[i] == set[j])
 			{
 				condition = 1;
-				str[i] = 1;
+				str[i] = 'x';
 			}
 			j++;
 		}
@@ -72,13 +72,13 @@ static char	*ft__alloc(char *str, size_t i)
 	size_t	l;
 
 	l = 0;
-	p = malloc(i * sizeof(char) + 1);
+	p = malloc(i * sizeof(char));
 	if (!p)
-		return (0);
+		return (NULL);
 	n = 0;
 	while (str[l])
 	{
-		if (str[l] != 1)
+		if (str[l] != 'x')
 			p[n++] = str[l];
 		l++;
 	}
@@ -91,20 +91,25 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	i;
 	size_t	j;
 	char	*p;
+	char	*s1_p;
 
-	j = 0;
 	if (!s1 || !set)
 		return (0);
-	check((char *)s1, (char *)set);
+	s1_p = malloc(sizeof(char) * (ft_strlen(s1) + 1));
+	if (!s1_p)
+		return (NULL);
+	ft_strlcpy((char *)s1_p, s1, ft_strlen(s1) + 1);
+	j = 0;
+	if (*set == '\0')
+		return ((char *)s1);
+	check((char *)s1_p, (char *)set);
 	i = 0;
-	while (*(char *)(s1 + i) != '\0')
+	while (*(char *)(s1_p + i) != '\0')
 	{
-		if (*(char *)(s1 + i) != 1)
+		if (*(char *)(s1_p + i) != 'x')
 			j++;
 		i++;
 	}
-	p = ft__alloc((char *)s1, j);
-	if (!p)
-		return (0);
+	p = ft__alloc((char *)s1_p, j + 1);
 	return (p);
 }
