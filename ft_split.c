@@ -6,7 +6,7 @@
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 16:43:31 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/18 23:51:43 by hlahwaou         ###   ########.fr       */
+/*   Updated: 2022/10/20 09:16:05 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static size_t	word_count(char *str, char c)
 	while (str[i])
 	{
 		j = 1;
-		while (str[i] == c && str[i] != '\0')
+		while (str[i] == c && str[i])
 			i++;
 		while (str[i] != c && str[i])
 		{

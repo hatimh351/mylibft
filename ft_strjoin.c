@@ -6,13 +6,13 @@
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 14:30:12 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/11 05:19:27 by hlahwaou         ###   ########.fr       */
+/*   Updated: 2022/10/20 09:25:28 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_alloc(size_t size)
+static void	*ft_alloc(size_t size)
 {
 	void	*p;
 	size_t	i;

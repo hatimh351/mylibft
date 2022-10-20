@@ -6,7 +6,7 @@
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 23:54:50 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/19 08:27:39 by hlahwaou         ###   ########.fr       */
+/*   Updated: 2022/10/20 05:10:32 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ static long long	final_result(char *str_, int signe)
 	nbr = 0;
 	while (str_[i] <= '9' && str_[i] >= '0')
 	{
+		kifkif = nbr;
 		nbr = nbr * 10 + (str_[i] - 48);
-		kifkif = nbr * 10;
-		if (kifkif / 10 != nbr && signe == -1)
+		if (kifkif != nbr / 10 && signe == -1)
 			return (0);
-		else if (kifkif / 10 != nbr && signe == 1)
+		else if (kifkif != nbr / 10 && signe == 1)
 			return (-1);
 		i++;
 	}
