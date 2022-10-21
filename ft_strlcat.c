@@ -6,7 +6,7 @@
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 21:44:35 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/20 09:26:25 by hlahwaou         ###   ########.fr       */
+/*   Updated: 2022/10/21 08:26:11 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	if (dstsize == 0)
 		return (src_len);
 	dst_len = ft_strlen(dst);
-	if ((dstsize <= dst_len))
+	if (dstsize <= dst_len)
 		return (dstsize + src_len);
 	i = 0;
 	while ((dst_len + i < dstsize - 1) && src[i])

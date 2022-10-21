@@ -6,7 +6,7 @@
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 23:54:50 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/20 05:10:32 by hlahwaou         ###   ########.fr       */
+/*   Updated: 2022/10/21 08:20:36 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,9 @@ int	ft_atoi(const char *str)
 		i++;
 	if (str_[i] == '+' || str_[i] == '-')
 	{
-		if (str_[i++] == '-')
+		if (str_[i] == '-')
 			signe *= -1;
+		i++;
 	}
 	return (final_result(str_ + i, signe));
 }
