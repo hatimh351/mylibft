@@ -13,8 +13,8 @@ CC = cc -Wall -Wextra -Werror
 OBJS = ${SRCS:%.c=%.o}
 
 all : $(NAME)
-$(NAME) : $(OBJS)
-%.o : %.c
+$(NAME) : $(OBJS) libft.h
+%.o : %.c libft.h
 	$(CC) -c $<
 	$(AR) $(NAME) $@
 clean :

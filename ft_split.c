@@ -6,7 +6,7 @@
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 16:43:31 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/21 06:20:57 by hlahwaou         ###   ########.fr       */
+/*   Updated: 2022/10/21 10:56:15 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static void	free_p(char **p)
 
 	i = 0;
 	while (p[i] != 0)
-		free(p[i]);
+		free(p[i++]);
 	free(p);
 	p = 0;
 }

@@ -6,23 +6,11 @@
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 14:30:12 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/20 09:25:28 by hlahwaou         ###   ########.fr       */
+/*   Updated: 2022/10/21 10:24:46 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static void	*ft_alloc(size_t size)
-{
-	void	*p;
-	size_t	i;
-
-	i = 0;
-	p = malloc(size);
-	if (!p)
-		return (0);
-	return (p);
-}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -38,7 +26,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	s2_ = (char *)s2;
 	j = ft_strlen(s1_);
 	j += ft_strlen(s2_);
-	p = (char *)ft_alloc(j + 1);
+	p = malloc(j + 1);
 	if (!p)
 		return (0);
 	j = 0;
