@@ -18,7 +18,7 @@ $(NAME) : $(OBJS) libft.h
 	$(CC) -c $<
 	$(AR) $(NAME) $@
 clean :
-	rm -f $(OBJS) $(O_BONUS)
+	rm -f $(OBJS)
 fclean : clean
 	rm -f $(NAME)
 re : fclean $(NAME)

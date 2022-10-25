@@ -6,7 +6,7 @@
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 14:03:44 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/17 23:36:45 by hlahwaou         ###   ########.fr       */
+/*   Updated: 2022/10/22 08:25:29 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strdup(const char *s1)
 {
-	void	*p;
+	char	*p;
 	size_t	i;
 
 	i = 0;
@@ -26,9 +26,9 @@ char	*ft_strdup(const char *s1)
 	i = 0;
 	while (s1[i])
 	{
-		*(char *)(p + i) = s1[i];
+		p[i] = s1[i];
 		i++;
 	}
-	*(char *)(p + i) = '\0';
+	p[i] = '\0';
 	return (p);
 }

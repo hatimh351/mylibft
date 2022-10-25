@@ -6,7 +6,7 @@
 /*   By: hlahwaou <hlahwaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 16:43:31 by hlahwaou          #+#    #+#             */
-/*   Updated: 2022/10/21 10:56:15 by hlahwaou         ###   ########.fr       */
+/*   Updated: 2022/10/24 09:06:00 by hlahwaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ static void	ft_alloc_string(char **p, char *str, char c)
 {
 	size_t	start;
 	size_t	i;
-	size_t	j;
 	size_t	k;
 
 	k = 0;
@@ -63,17 +62,18 @@ static void	ft_alloc_string(char **p, char *str, char c)
 		if (str[i] != c && str[i])
 		{
 			start = i;
-			j = 0;
-			while (str[i + j] != c && str[i + j])
-				j++;
-			p[k] = ft_substr(str, start, j);
-			i += j;
+			while (str[i] != c && str[i])
+				i++;
+			p[k] = ft_substr(str, start, i - start);
 			if (!p[k])
+			{
 				free_p(p);
+				return ;
+			}
 			k++;
 		}
 		if (str[i] == '\0')
-			break ;
+			return ;
 		i++;
 	}
 }

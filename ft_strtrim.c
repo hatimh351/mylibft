@@ -37,13 +37,13 @@ static size_t	check_f_index(char *str, char *set)
 	return (i);
 }
 
-static size_t	check_l_index(char *str, char *set, size_t i)
+static size_t	check_l_index(char *str, char *set, size_t i, size_t n)
 {
 	size_t	j;
 	int		cond;
 
 	cond = 0;
-	while (i >= 0)
+	while (i >= 0 && i > n)
 	{
 		j = 0;
 		cond = 0;
@@ -70,10 +70,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!set || !s1)
 		return (0);
 	if (set[0] == '\0')
-		return ((char *)s1);
+		return (ft_strdup(s1));
 	len = ft_strlen(s1);
 	f_index = check_f_index((char *)s1, (char *)set);
-	l_index = check_l_index((char *)s1, (char *)set, len - 1);
+	l_index = check_l_index((char *)s1, (char *)set, len - 1, f_index);
 	p = ft_substr(s1, f_index, l_index - f_index + 1);
 	return (p);
 }
